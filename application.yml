@@ -1,0 +1,23 @@
+server:
+  port: 1003
+
+spring:
+  application:
+    name: Consumer
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+  mvc: #静态资源处理
+    static-path-pattern: /static/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+  instance:
+    prefer-ip-address: true
+
+feign: #断路由
+  hystrix:
+    enabled: true

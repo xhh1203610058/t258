@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: Consumer
+  servlet:
+    multipart:
+      max-file-size: 10000000
+      max-request-size: 10000000
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
